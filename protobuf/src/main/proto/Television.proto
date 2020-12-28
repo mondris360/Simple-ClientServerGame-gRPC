@@ -1,0 +1,46 @@
+syntax ="proto3";
+import  "Car.proto";
+import "Address.proto";
+
+// instruct the plugging to create a separate Person class which is more readable
+option  java_multiple_files = true;
+// instruct the plugin  to place the newly created class inside a package
+option java_package = "com.mondris.generatedProtobufClass";
+
+
+//v1
+//message  Television {
+//  string name = 1;
+//  int32  year = 2;
+//  string manufacturer = 3;
+//}
+
+// v2
+//message  Television {
+//  string name = 1;
+//  int32  model = 2;
+//  string manufacturer = 3;
+//  TvType tvType =  4;
+//}
+
+// v3
+//message  Television {
+//  string name = 1;
+//  TvType tvType =  4;
+//}
+//v4
+
+message  Television {
+  string name = 1;
+  // tags and name you cannot use
+  reserved  2;
+  reserved  "model";
+  int32 price = 3;
+  TvType tvType =  4;
+}
+
+enum TvType {
+  HD = 0;
+  UHD = 1;
+  OLED = 2;
+}

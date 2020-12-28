@@ -1,0 +1,15 @@
+syntax ="proto3";
+import "google/protobuf/wrappers.proto";
+
+// instruct the plugging to create a separate Person class which is more readable
+option  java_multiple_files = true;
+// instruct the plugin  to place the newly created class inside a package
+option java_package = "com.mondris.generatedProtobufClass";
+
+
+// using wrapper types in protobuf
+message School {
+  google.protobuf.Int32Value totalStudents = 1;
+  google.protobuf.DoubleValue averagePerformance = 2;
+  google.protobuf.StringValue name = 3;
+}

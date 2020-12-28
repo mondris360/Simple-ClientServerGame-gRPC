@@ -1,0 +1,24 @@
+syntax ="proto3";
+//import "Request_Proto/BalanceCheckReq.proto";
+//import "Response_Proto/BalanceCheckRes.proto";
+
+package Service;
+option java_multiple_files =  true;
+option java_package = "com.mondris.service";
+
+// Bank service
+service BankService {
+  rpc getBalance(BalanceCheckReq) returns (BalanceCheckRes);
+}
+
+
+// protobuf to send request to get account balance
+message BalanceCheckReq {
+  int32  accountNumber = 1;
+}
+
+
+// protobuf for balance check response
+message BalanceCheckRes {
+  int32  amount = 1;
+}

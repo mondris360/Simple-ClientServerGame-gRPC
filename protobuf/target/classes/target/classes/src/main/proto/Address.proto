@@ -1,0 +1,16 @@
+// protobuf  for Address
+
+syntax = "proto3";
+option  java_multiple_files = true;
+// instruct the plugin  to place the newly created class inside a package
+option java_package = "com.mondris.generatedProtobufClass";
+
+
+message Address {
+  int32  houseNo = 1;
+  string streetName = 2;
+  string city = 3;
+  string state = 4;
+  string country =5;
+  int32  zipcode =6;
+}

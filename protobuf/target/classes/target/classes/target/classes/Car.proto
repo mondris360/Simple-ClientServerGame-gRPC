@@ -1,0 +1,15 @@
+// specify the proto type version
+syntax = "proto3";
+import "BodyColor.proto";
+option  java_multiple_files = true;
+// instruct the plugin  to place the newly created class inside a package
+option java_package = "com.mondris.generatedProtobufClass";
+
+// protobuf for Car Object
+message Car {
+  string model = 1;
+  string manufacturer = 2;
+  string plateNumber = 3;
+  BodyColor bodyColor = 4;
+}
+
